@@ -3,17 +3,18 @@ import mealList from "./api";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [meal, setMeal] = useState("");
-
-  useEffect(() => {}, []);
+  let [meal, setMeal] = useState(0);
 
   const handleClick = () => {
-    alert("you clicked");
+    if (meal !== mealList.length) {
+      return setMeal(meal++);
+    }
+    return (meal = 0);
   };
 
   return (
     <div className="App">
-      <div>Tonight we're having: {mealList[1]}</div>
+      <div>Tonight we're having: {mealList[meal]}</div>
       <button onClick={() => handleClick()}>Click me</button>
     </div>
   );

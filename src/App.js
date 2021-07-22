@@ -1,15 +1,12 @@
 import "./App.css";
 import mealList from "./api";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   let [meal, setMeal] = useState(0);
 
   const handleClick = () => {
-    if (meal !== mealList.length) {
-      return setMeal(meal++);
-    }
-    return (meal = 0);
+    meal !== mealList.length - 1 ? setMeal(meal + 1) : setMeal((meal = 0));
   };
 
   return (

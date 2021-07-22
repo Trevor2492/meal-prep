@@ -6,7 +6,10 @@ function App() {
   let [meal, setMeal] = useState(0);
 
   const handleClick = () => {
-    meal !== mealList.length - 1 ? setMeal(meal + 1) : setMeal((meal = 0));
+    // sets num to be a random integer that represents an index number from mealList
+    let num = Math.floor(Math.random() * mealList.length);
+
+    return setMeal(num);
   };
 
   return (

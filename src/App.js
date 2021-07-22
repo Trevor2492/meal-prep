@@ -4,10 +4,14 @@ import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import CachedIcon from "@material-ui/icons/Cached";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
+  },
+  typography: {
+    color: "#464A45",
   },
 }));
 
@@ -24,7 +28,12 @@ function App() {
 
   return (
     <div className="App">
-      <div>Tonight we're having: {mealList[meal]}</div>
+      <Typography className={classes.typography} variant="h4" gutterBottom>
+        Tonight we're having:
+      </Typography>
+      <Typography className={classes.typography} variant="h5" gutterBottom>
+        {mealList[meal]}
+      </Typography>
       <Button
         variant="contained"
         color="primary"

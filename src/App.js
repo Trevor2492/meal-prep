@@ -39,6 +39,7 @@ function App() {
     return;
   };
 
+  // sets an individual day of the week to a random integer from mealList
   const handleSingleRefresh = (dayOfWeek) => {
     switch (dayOfWeek) {
       case "m":

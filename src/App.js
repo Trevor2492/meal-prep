@@ -41,60 +41,62 @@ function App() {
 
   return (
     <div className="App">
-      <Typography className={classes.typography} variant="h4" gutterBottom>
-        This week we're having:
-      </Typography>
-      <Typography className={classes.typography} variant="h5" gutterBottom>
-        Monday: {mealList[monday]}{" "}
-        <Button>
-          <RefreshIcon />
+      <div className="container">
+        <Typography className={classes.typography} variant="h4" gutterBottom>
+          This week we're having:
+        </Typography>
+        <Typography className={classes.typography} variant="h5" gutterBottom>
+          Monday: {mealList[monday]}{" "}
+          <Button>
+            <RefreshIcon />
+          </Button>
+        </Typography>
+        <Typography className={classes.typography} variant="h5" gutterBottom>
+          Tuesday: {mealList[tuesday]}{" "}
+          <Button>
+            <RefreshIcon />
+          </Button>
+        </Typography>
+        <Typography className={classes.typography} variant="h5" gutterBottom>
+          Wednesday: {mealList[wednesday]}{" "}
+          <Button>
+            <RefreshIcon />
+          </Button>
+        </Typography>
+        <Typography className={classes.typography} variant="h5" gutterBottom>
+          Thursday: {mealList[thursday]}{" "}
+          <Button>
+            <RefreshIcon />
+          </Button>
+        </Typography>
+        <Typography className={classes.typography} variant="h5" gutterBottom>
+          Friday: {mealList[friday]}{" "}
+          <Button>
+            <RefreshIcon />
+          </Button>
+        </Typography>
+        <Typography className={classes.typography} variant="h5" gutterBottom>
+          Saturday: {mealList[saturday]}{" "}
+          <Button>
+            <RefreshIcon />
+          </Button>
+        </Typography>
+        <Typography className={classes.typography} variant="h5" gutterBottom>
+          Sunday: {mealList[sunday]}{" "}
+          <Button>
+            <RefreshIcon />
+          </Button>
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          startIcon={<CachedIcon />}
+          onClick={() => handleClick()}
+        >
+          Randomize All
         </Button>
-      </Typography>
-      <Typography className={classes.typography} variant="h5" gutterBottom>
-        Tuesday: {mealList[tuesday]}{" "}
-        <Button>
-          <RefreshIcon />
-        </Button>
-      </Typography>
-      <Typography className={classes.typography} variant="h5" gutterBottom>
-        Wednesday: {mealList[wednesday]}{" "}
-        <Button>
-          <RefreshIcon />
-        </Button>
-      </Typography>
-      <Typography className={classes.typography} variant="h5" gutterBottom>
-        Thursday: {mealList[thursday]}{" "}
-        <Button>
-          <RefreshIcon />
-        </Button>
-      </Typography>
-      <Typography className={classes.typography} variant="h5" gutterBottom>
-        Friday: {mealList[friday]}{" "}
-        <Button>
-          <RefreshIcon />
-        </Button>
-      </Typography>
-      <Typography className={classes.typography} variant="h5" gutterBottom>
-        Saturday: {mealList[saturday]}{" "}
-        <Button>
-          <RefreshIcon />
-        </Button>
-      </Typography>
-      <Typography className={classes.typography} variant="h5" gutterBottom>
-        Sunday: {mealList[sunday]}{" "}
-        <Button>
-          <RefreshIcon />
-        </Button>
-      </Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        startIcon={<CachedIcon />}
-        onClick={() => handleClick()}
-      >
-        Randomize All
-      </Button>
+      </div>
     </div>
   );
 }

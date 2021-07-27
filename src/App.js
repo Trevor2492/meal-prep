@@ -39,6 +39,35 @@ function App() {
     return;
   };
 
+  const handleSingleRefresh = (dayOfWeek) => {
+    switch (dayOfWeek) {
+      case "m":
+        setMonday(Math.floor(Math.random() * mealList.length));
+        break;
+      case "t":
+        setTuesday(Math.floor(Math.random() * mealList.length));
+        break;
+      case "w":
+        setWednesday(Math.floor(Math.random() * mealList.length));
+        break;
+      case "th":
+        setThursday(Math.floor(Math.random() * mealList.length));
+        break;
+      case "f":
+        setFriday(Math.floor(Math.random() * mealList.length));
+        break;
+      case "sat":
+        setSaturday(Math.floor(Math.random() * mealList.length));
+        break;
+      case "sun":
+        setSunday(Math.floor(Math.random() * mealList.length));
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="App">
       <div className="container">
@@ -48,43 +77,43 @@ function App() {
         <Typography className={classes.typography} variant="h5" gutterBottom>
           Monday: {mealList[monday]}{" "}
           <Button>
-            <RefreshIcon />
+            <RefreshIcon onClick={() => handleSingleRefresh("m")} />
           </Button>
         </Typography>
         <Typography className={classes.typography} variant="h5" gutterBottom>
           Tuesday: {mealList[tuesday]}{" "}
           <Button>
-            <RefreshIcon />
+            <RefreshIcon onClick={() => handleSingleRefresh("t")} />
           </Button>
         </Typography>
         <Typography className={classes.typography} variant="h5" gutterBottom>
           Wednesday: {mealList[wednesday]}{" "}
           <Button>
-            <RefreshIcon />
+            <RefreshIcon onClick={() => handleSingleRefresh("w")} />
           </Button>
         </Typography>
         <Typography className={classes.typography} variant="h5" gutterBottom>
           Thursday: {mealList[thursday]}{" "}
           <Button>
-            <RefreshIcon />
+            <RefreshIcon onClick={() => handleSingleRefresh("th")} />
           </Button>
         </Typography>
         <Typography className={classes.typography} variant="h5" gutterBottom>
           Friday: {mealList[friday]}{" "}
           <Button>
-            <RefreshIcon />
+            <RefreshIcon onClick={() => handleSingleRefresh("f")} />
           </Button>
         </Typography>
         <Typography className={classes.typography} variant="h5" gutterBottom>
           Saturday: {mealList[saturday]}{" "}
           <Button>
-            <RefreshIcon />
+            <RefreshIcon onClick={() => handleSingleRefresh("sat")} />
           </Button>
         </Typography>
         <Typography className={classes.typography} variant="h5" gutterBottom>
           Sunday: {mealList[sunday]}{" "}
           <Button>
-            <RefreshIcon />
+            <RefreshIcon onClick={() => handleSingleRefresh("sun")} />
           </Button>
         </Typography>
         <Button

@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import CachedIcon from "@material-ui/icons/Cached";
 import Typography from "@material-ui/core/Typography";
 import RefreshIcon from "@material-ui/icons/Refresh";
+import NewInput from "./NewInput";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -126,6 +127,7 @@ function App() {
         >
           Randomize All
         </Button>
+        <NewInput />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const NewInput = () => {
   const [item, setItem] = useState("");
 
   const handleClick = () => {
-    alert("You added: " + item);
+    item ? alert("You added: " + item) : alert("You must enter a value");
   };
 
   return (
@@ -19,15 +19,26 @@ const NewInput = () => {
         alignItems: "center",
       }}
     >
-      <Typography variant="h6" style={{ marginTop: 45 }}>
+      <Typography variant="h6" style={{ marginTop: 45, color: "#464A45" }}>
         Add a new item to the list here:{" "}
       </Typography>
       <input
         value={item}
         onChange={(e) => setItem(e.target.value)}
-        placeholder="Add New Item Here"
+        placeholder="Add New Item"
         type="text"
-        style={{ margin: 15, width: "50%" }}
+        style={{
+          margin: 15,
+          color: "#464A45",
+          minWidth: "70%",
+          maxWidth: "85%",
+          height: "35px",
+          border: "none",
+          borderRadius: "10px",
+          textAlign: "center",
+          outline: "none", //prevents highlight on input focus
+          fontSize: "30px",
+        }}
       />
       <Button variant="outlined" color="primary" onClick={() => handleClick()}>
         Submit Item

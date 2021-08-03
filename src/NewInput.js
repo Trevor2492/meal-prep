@@ -40,7 +40,7 @@ const NewInput = () => {
           fontSize: "30px",
         }}
       />
-      <Button variant="outlined" color="primary" onClick={() => handleClick()}>
+      <Button variant="contained" color="primary" onClick={() => handleClick()}>
         Submit Item
       </Button>
     </div>

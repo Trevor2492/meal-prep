@@ -45,6 +45,7 @@ const mealList = [
   "Rice and Veggies",
   "Quesadillas",
   "Shepherd's Pie",
+  "Taco Bell",
 ];
 
 export default mealList;

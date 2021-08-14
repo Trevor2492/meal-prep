@@ -2,12 +2,14 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { useState } from "react";
 import Typography from "@material-ui/core/Typography";
+import "./NewInput.css";
 
 const NewInput = () => {
   const [item, setItem] = useState("");
 
   const handleClick = () => {
     item ? alert("You added: " + item) : alert("You must enter a value");
+    setItem("");
   };
 
   return (
@@ -27,18 +29,7 @@ const NewInput = () => {
         onChange={(e) => setItem(e.target.value)}
         placeholder="Add New Item"
         type="text"
-        style={{
-          margin: 15,
-          color: "#464A45",
-          minWidth: "70%",
-          maxWidth: "85%",
-          height: "35px",
-          border: "none",
-          borderRadius: "10px",
-          textAlign: "center",
-          outline: "none", //prevents highlight on input focus
-          fontSize: "30px",
-        }}
+        className="input"
       />
       <Button variant="contained" color="primary" onClick={() => handleClick()}>
         Submit Item

@@ -73,51 +73,58 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Typography className={classes.typography} variant="h4" gutterBottom>
+        <Typography
+          className={classes.typography}
+          style={{ marginTop: 15 }}
+          variant="h4"
+          gutterBottom
+        >
           This week we're having:
         </Typography>
-        <Typography className={classes.typography} variant="h5" gutterBottom>
-          Monday: {mealList[monday]}{" "}
-          <Button>
-            <RefreshIcon onClick={() => handleSingleRefresh("m")} />
-          </Button>
-        </Typography>
-        <Typography className={classes.typography} variant="h5" gutterBottom>
-          Tuesday: {mealList[tuesday]}{" "}
-          <Button>
-            <RefreshIcon onClick={() => handleSingleRefresh("t")} />
-          </Button>
-        </Typography>
-        <Typography className={classes.typography} variant="h5" gutterBottom>
-          Wednesday: {mealList[wednesday]}{" "}
-          <Button>
-            <RefreshIcon onClick={() => handleSingleRefresh("w")} />
-          </Button>
-        </Typography>
-        <Typography className={classes.typography} variant="h5" gutterBottom>
-          Thursday: {mealList[thursday]}{" "}
-          <Button>
-            <RefreshIcon onClick={() => handleSingleRefresh("th")} />
-          </Button>
-        </Typography>
-        <Typography className={classes.typography} variant="h5" gutterBottom>
-          Friday: {mealList[friday]}{" "}
-          <Button>
-            <RefreshIcon onClick={() => handleSingleRefresh("f")} />
-          </Button>
-        </Typography>
-        <Typography className={classes.typography} variant="h5" gutterBottom>
-          Saturday: {mealList[saturday]}{" "}
-          <Button>
-            <RefreshIcon onClick={() => handleSingleRefresh("sat")} />
-          </Button>
-        </Typography>
-        <Typography className={classes.typography} variant="h5" gutterBottom>
-          Sunday: {mealList[sunday]}{" "}
-          <Button>
-            <RefreshIcon onClick={() => handleSingleRefresh("sun")} />
-          </Button>
-        </Typography>
+        <div className="list">
+          <Typography className={classes.typography} variant="h5" gutterBottom>
+            Monday: {mealList[monday]}{" "}
+            <Button>
+              <RefreshIcon onClick={() => handleSingleRefresh("m")} />
+            </Button>
+          </Typography>
+          <Typography className={classes.typography} variant="h5" gutterBottom>
+            Tuesday: {mealList[tuesday]}{" "}
+            <Button>
+              <RefreshIcon onClick={() => handleSingleRefresh("t")} />
+            </Button>
+          </Typography>
+          <Typography className={classes.typography} variant="h5" gutterBottom>
+            Wednesday: {mealList[wednesday]}{" "}
+            <Button>
+              <RefreshIcon onClick={() => handleSingleRefresh("w")} />
+            </Button>
+          </Typography>
+          <Typography className={classes.typography} variant="h5" gutterBottom>
+            Thursday: {mealList[thursday]}{" "}
+            <Button>
+              <RefreshIcon onClick={() => handleSingleRefresh("th")} />
+            </Button>
+          </Typography>
+          <Typography className={classes.typography} variant="h5" gutterBottom>
+            Friday: {mealList[friday]}{" "}
+            <Button>
+              <RefreshIcon onClick={() => handleSingleRefresh("f")} />
+            </Button>
+          </Typography>
+          <Typography className={classes.typography} variant="h5" gutterBottom>
+            Saturday: {mealList[saturday]}{" "}
+            <Button>
+              <RefreshIcon onClick={() => handleSingleRefresh("sat")} />
+            </Button>
+          </Typography>
+          <Typography className={classes.typography} variant="h5" gutterBottom>
+            Sunday: {mealList[sunday]}{" "}
+            <Button>
+              <RefreshIcon onClick={() => handleSingleRefresh("sun")} />
+            </Button>
+          </Typography>
+        </div>
         <Button
           variant="contained"
           color="primary"

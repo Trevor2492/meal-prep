@@ -7,7 +7,9 @@ import CachedIcon from "@material-ui/icons/Cached";
 import Typography from "@material-ui/core/Typography";
 import RefreshIcon from "@material-ui/icons/Refresh";
 import NewInput from "./NewInput";
+import FullList from "./FullList";
 import firebase from "./firebase";
+import { render } from "@testing-library/react";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -156,12 +158,14 @@ function App() {
         </Button>
         <NewInput />
 
-        {/* This div is simply to show that the firestore database is connected properly and works! */}
-        <div>
-          {meals.map((meal) => (
-            <div>{meal.name}</div>
-          ))}
-        </div>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          onClick={() => render(<FullList meals={meals} />)}
+        >
+          Show full list
+        </Button>
       </div>
     </div>
   );

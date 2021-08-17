@@ -1,12 +1,13 @@
 import "./App.css";
 import mealList from "./api";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import CachedIcon from "@material-ui/icons/Cached";
 import Typography from "@material-ui/core/Typography";
 import RefreshIcon from "@material-ui/icons/Refresh";
 import NewInput from "./NewInput";
+import firebase from "./firebase";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -17,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// References the 'meals' collection from firestore
+const ref = firebase.firestore().collection("meals");
+
 function App() {
   let [monday, setMonday] = useState(0);
   let [tuesday, setTuesday] = useState(0);
@@ -25,7 +29,23 @@ function App() {
   let [friday, setFriday] = useState(0);
   let [saturday, setSaturday] = useState(0);
   let [sunday, setSunday] = useState(0);
+  const [meals, setMeals] = useState([]);
   const classes = useStyles();
+
+  // Gets the 'meals' list from firestore database, listens for changes, and updates in realtime when new meals are added
+  const getMeals = () => {
+    ref.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setMeals(items);
+    });
+  };
+
+  useEffect(() => {
+    getMeals();
+  }, []);
 
   const handleClick = () => {
     // sets each day of the week to be a random integer that represents an index number from mealList
@@ -135,6 +155,13 @@ function App() {
           Randomize All
         </Button>
         <NewInput />
+
+        {/* This div is simply to show that the firestore database is connected properly and works! */}
+        <div>
+          {meals.map((meal) => (
+            <div>{meal.name}</div>
+          ))}
+        </div>
       </div>
     </div>
   );

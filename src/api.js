@@ -41,7 +41,7 @@ const mealList = [
   "Tater Tots",
   "Hawaiian Haystacks",
   "Kebabs",
-  "Shrimp",
+  "Shrimp Fettuccine",
   "Rice and Veggies",
   "Quesadillas",
   "Shepherd's Pie",

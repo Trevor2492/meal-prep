@@ -9,7 +9,6 @@ import RefreshIcon from "@material-ui/icons/Refresh";
 import NewInput from "./NewInput";
 import FullList from "./FullList";
 import firebase from "./firebase";
-import { render } from "@testing-library/react";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -32,6 +31,7 @@ function App() {
   let [saturday, setSaturday] = useState(0);
   let [sunday, setSunday] = useState(0);
   const [meals, setMeals] = useState([]);
+  const [fullListShown, setFullListShown] = useState(false);
   const classes = useStyles();
 
   // Gets the 'meals' list from firestore database, listens for changes, and updates in realtime when new meals are added
@@ -162,10 +162,11 @@ function App() {
           variant="contained"
           color="primary"
           className={classes.button}
-          onClick={() => render(<FullList meals={meals} />)}
+          onClick={() => setFullListShown(!fullListShown)}
         >
-          Show full list
+          {fullListShown ? "Hide List" : "Show Full List"}
         </Button>
+        {fullListShown && <FullList meals={meals} />}
       </div>
     </div>
   );

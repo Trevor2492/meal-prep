@@ -4,7 +4,7 @@ const FullList = ({ meals }) => {
   return (
     <div>
       {meals.map((meal) => (
-        <div>{meal.name}</div>
+        <div key={meal.name}>{meal.name}</div>
       ))}
     </div>
   );

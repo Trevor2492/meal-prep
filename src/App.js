@@ -41,7 +41,7 @@ function App() {
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
       });
-      setMeals(items);
+      return setMeals(items);
     });
   };
 
@@ -50,15 +50,15 @@ function App() {
   }, []);
 
   const handleClick = () => {
-    // sets each day of the week to be a random integer that represents an index number from mealList
+    // sets each day of the week to be a random integer that represents an index number from 'meals'
 
-    setMonday(Math.floor(Math.random() * mealList.length));
-    setTuesday(Math.floor(Math.random() * mealList.length));
-    setWednesday(Math.floor(Math.random() * mealList.length));
-    setThursday(Math.floor(Math.random() * mealList.length));
-    setFriday(Math.floor(Math.random() * mealList.length));
-    setSaturday(Math.floor(Math.random() * mealList.length));
-    setSunday(Math.floor(Math.random() * mealList.length));
+    setMonday(Math.floor(Math.random() * meals.length));
+    setTuesday(Math.floor(Math.random() * meals.length));
+    setWednesday(Math.floor(Math.random() * meals.length));
+    setThursday(Math.floor(Math.random() * meals.length));
+    setFriday(Math.floor(Math.random() * meals.length));
+    setSaturday(Math.floor(Math.random() * meals.length));
+    setSunday(Math.floor(Math.random() * meals.length));
     return;
   };
 
@@ -66,25 +66,25 @@ function App() {
   const handleSingleRefresh = (dayOfWeek) => {
     switch (dayOfWeek) {
       case "m":
-        setMonday(Math.floor(Math.random() * mealList.length));
+        setMonday(Math.floor(Math.random() * meals.length));
         break;
       case "t":
-        setTuesday(Math.floor(Math.random() * mealList.length));
+        setTuesday(Math.floor(Math.random() * meals.length));
         break;
       case "w":
-        setWednesday(Math.floor(Math.random() * mealList.length));
+        setWednesday(Math.floor(Math.random() * meals.length));
         break;
       case "th":
-        setThursday(Math.floor(Math.random() * mealList.length));
+        setThursday(Math.floor(Math.random() * meals.length));
         break;
       case "f":
-        setFriday(Math.floor(Math.random() * mealList.length));
+        setFriday(Math.floor(Math.random() * meals.length));
         break;
       case "sat":
-        setSaturday(Math.floor(Math.random() * mealList.length));
+        setSaturday(Math.floor(Math.random() * meals.length));
         break;
       case "sun":
-        setSunday(Math.floor(Math.random() * mealList.length));
+        setSunday(Math.floor(Math.random() * meals.length));
         break;
 
       default:

@@ -36,8 +36,9 @@ function App() {
 
   // Gets the 'meals' list from firestore database, listens for changes, and updates in realtime when new meals are added
   const getMeals = () => {
+    const items = [];
+
     ref.onSnapshot((querySnapshot) => {
-      const items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
       });

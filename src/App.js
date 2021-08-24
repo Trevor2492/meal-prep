@@ -1,5 +1,4 @@
 import "./App.css";
-import mealList from "./api";
 import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -24,26 +23,28 @@ const ref = firebase.firestore().collection("meals");
 
 function App() {
   let [monday, setMonday] = useState(0);
-  let [tuesday, setTuesday] = useState(0);
-  let [wednesday, setWednesday] = useState(0);
-  let [thursday, setThursday] = useState(0);
-  let [friday, setFriday] = useState(0);
-  let [saturday, setSaturday] = useState(0);
-  let [sunday, setSunday] = useState(0);
-  const [meals, setMeals] = useState([]);
+  let [tuesday, setTuesday] = useState(1);
+  let [wednesday, setWednesday] = useState(2);
+  let [thursday, setThursday] = useState(3);
+  let [friday, setFriday] = useState(4);
+  let [saturday, setSaturday] = useState(5);
+  let [sunday, setSunday] = useState(6);
+  const [meals, setMeals] = useState(["", "", "", "", "", "", ""]);
+  const [isLoading, setIsLoading] = useState(false);
   const [fullListShown, setFullListShown] = useState(false);
   const classes = useStyles();
 
-  // Gets the 'meals' list from firestore database, listens for changes, and updates in realtime when new meals are added
+  // Gets the 'meals' list from firestore database
   const getMeals = () => {
-    const items = [];
-
+    setIsLoading(true);
     ref.onSnapshot((querySnapshot) => {
+      const items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
       });
-      return setMeals(items);
+      setMeals(items);
     });
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -93,6 +94,10 @@ function App() {
     }
   };
 
+  if (isLoading) {
+    return <p>Data is Loading...</p>;
+  }
+
   return (
     <div className="App">
       <div className="container">
@@ -106,43 +111,43 @@ function App() {
         </Typography>
         <div className="list">
           <Typography className={classes.typography} variant="h5" gutterBottom>
-            Monday: {mealList[monday]}{" "}
+            Monday: {meals[monday].name}{" "}
             <Button>
               <RefreshIcon onClick={() => handleSingleRefresh("m")} />
             </Button>
           </Typography>
           <Typography className={classes.typography} variant="h5" gutterBottom>
-            Tuesday: {mealList[tuesday]}{" "}
+            Tuesday: {meals[tuesday].name}{" "}
             <Button>
               <RefreshIcon onClick={() => handleSingleRefresh("t")} />
             </Button>
           </Typography>
           <Typography className={classes.typography} variant="h5" gutterBottom>
-            Wednesday: {mealList[wednesday]}{" "}
+            Wednesday: {meals[wednesday].name}{" "}
             <Button>
               <RefreshIcon onClick={() => handleSingleRefresh("w")} />
             </Button>
           </Typography>
           <Typography className={classes.typography} variant="h5" gutterBottom>
-            Thursday: {mealList[thursday]}{" "}
+            Thursday: {meals[thursday].name}{" "}
             <Button>
               <RefreshIcon onClick={() => handleSingleRefresh("th")} />
             </Button>
           </Typography>
           <Typography className={classes.typography} variant="h5" gutterBottom>
-            Friday: {mealList[friday]}{" "}
+            Friday: {meals[friday].name}{" "}
             <Button>
               <RefreshIcon onClick={() => handleSingleRefresh("f")} />
             </Button>
           </Typography>
           <Typography className={classes.typography} variant="h5" gutterBottom>
-            Saturday: {mealList[saturday]}{" "}
+            Saturday: {meals[saturday].name}{" "}
             <Button>
               <RefreshIcon onClick={() => handleSingleRefresh("sat")} />
             </Button>
           </Typography>
           <Typography className={classes.typography} variant="h5" gutterBottom>
-            Sunday: {mealList[sunday]}{" "}
+            Sunday: {meals[sunday].name}{" "}
             <Button>
               <RefreshIcon onClick={() => handleSingleRefresh("sun")} />
             </Button>

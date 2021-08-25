@@ -94,10 +94,6 @@ function App() {
     }
   };
 
-  if (isLoading) {
-    return <p>Data is Loading...</p>;
-  }
-
   return (
     <div className="App">
       <div className="container">
@@ -109,50 +105,84 @@ function App() {
         >
           This week we're having:
         </Typography>
-        <div className="list">
-          <Typography className={classes.typography} variant="h5" gutterBottom>
-            Monday: {meals[monday].name}{" "}
-            <Button>
-              <RefreshIcon onClick={() => handleSingleRefresh("m")} />
-            </Button>
-          </Typography>
-          <Typography className={classes.typography} variant="h5" gutterBottom>
-            Tuesday: {meals[tuesday].name}{" "}
-            <Button>
-              <RefreshIcon onClick={() => handleSingleRefresh("t")} />
-            </Button>
-          </Typography>
-          <Typography className={classes.typography} variant="h5" gutterBottom>
-            Wednesday: {meals[wednesday].name}{" "}
-            <Button>
-              <RefreshIcon onClick={() => handleSingleRefresh("w")} />
-            </Button>
-          </Typography>
-          <Typography className={classes.typography} variant="h5" gutterBottom>
-            Thursday: {meals[thursday].name}{" "}
-            <Button>
-              <RefreshIcon onClick={() => handleSingleRefresh("th")} />
-            </Button>
-          </Typography>
-          <Typography className={classes.typography} variant="h5" gutterBottom>
-            Friday: {meals[friday].name}{" "}
-            <Button>
-              <RefreshIcon onClick={() => handleSingleRefresh("f")} />
-            </Button>
-          </Typography>
-          <Typography className={classes.typography} variant="h5" gutterBottom>
-            Saturday: {meals[saturday].name}{" "}
-            <Button>
-              <RefreshIcon onClick={() => handleSingleRefresh("sat")} />
-            </Button>
-          </Typography>
-          <Typography className={classes.typography} variant="h5" gutterBottom>
-            Sunday: {meals[sunday].name}{" "}
-            <Button>
-              <RefreshIcon onClick={() => handleSingleRefresh("sun")} />
-            </Button>
-          </Typography>
-        </div>
+
+        {isLoading ? (
+          <p>Data Is Loading...</p>
+        ) : (
+          <div className="list">
+            <Typography
+              className={classes.typography}
+              variant="h5"
+              gutterBottom
+            >
+              Monday: {meals[monday].name}{" "}
+              <Button>
+                <RefreshIcon onClick={() => handleSingleRefresh("m")} />
+              </Button>
+            </Typography>
+            <Typography
+              className={classes.typography}
+              variant="h5"
+              gutterBottom
+            >
+              Tuesday: {meals[tuesday].name}{" "}
+              <Button>
+                <RefreshIcon onClick={() => handleSingleRefresh("t")} />
+              </Button>
+            </Typography>
+            <Typography
+              className={classes.typography}
+              variant="h5"
+              gutterBottom
+            >
+              Wednesday: {meals[wednesday].name}{" "}
+              <Button>
+                <RefreshIcon onClick={() => handleSingleRefresh("w")} />
+              </Button>
+            </Typography>
+            <Typography
+              className={classes.typography}
+              variant="h5"
+              gutterBottom
+            >
+              Thursday: {meals[thursday].name}{" "}
+              <Button>
+                <RefreshIcon onClick={() => handleSingleRefresh("th")} />
+              </Button>
+            </Typography>
+            <Typography
+              className={classes.typography}
+              variant="h5"
+              gutterBottom
+            >
+              Friday: {meals[friday].name}{" "}
+              <Button>
+                <RefreshIcon onClick={() => handleSingleRefresh("f")} />
+              </Button>
+            </Typography>
+            <Typography
+              className={classes.typography}
+              variant="h5"
+              gutterBottom
+            >
+              Saturday: {meals[saturday].name}{" "}
+              <Button>
+                <RefreshIcon onClick={() => handleSingleRefresh("sat")} />
+              </Button>
+            </Typography>
+            <Typography
+              className={classes.typography}
+              variant="h5"
+              gutterBottom
+            >
+              Sunday: {meals[sunday].name}{" "}
+              <Button>
+                <RefreshIcon onClick={() => handleSingleRefresh("sun")} />
+              </Button>
+            </Typography>
+          </div>
+        )}
+
         <Button
           variant="contained"
           color="primary"

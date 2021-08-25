@@ -1,9 +1,9 @@
 import React from "react";
+import "./FullList.css";
 
 const FullList = ({ meals }) => {
   return (
-    <div>
-      There are {meals.length} different meals
+    <div className="fullList">
       {meals.map((meal) => (
         <div key={meal.name}>{meal.name}</div>
       ))}

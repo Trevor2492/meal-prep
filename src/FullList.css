@@ -1,0 +1,13 @@
+.fullList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-height: 30rem;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.194);
+  background-color: white;
+}

@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  max-height: 30rem;
+  max-height: fit-content;
   margin: 15px;
   border-radius: 10px;
   padding: 18px;

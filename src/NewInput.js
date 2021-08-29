@@ -2,13 +2,28 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { useState } from "react";
 import Typography from "@material-ui/core/Typography";
+import firebase from "./firebase";
 import "./NewInput.css";
+
+const ref = firebase.firestore().collection("meals");
 
 const NewInput = () => {
   const [item, setItem] = useState("");
 
-  const handleClick = () => {
-    item ? alert("You added: " + item) : alert("You must enter a value");
+  const handleClick = async () => {
+    item
+      ? ref
+          .doc(item)
+          .set({
+            name: item,
+          })
+          .then(() => {
+            alert(item + " has been added to the list");
+          })
+          .catch((error) => {
+            console.error("Error writing document: ", error);
+          })
+      : alert("You have to type something in");
     setItem("");
   };
 

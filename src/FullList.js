@@ -9,9 +9,9 @@ const FullList = ({ meals }) => {
       {meals.map((meal) => (
         <div key={meal.name}>
           {meal.name}
-          <IconButton aria-label="delete">
+          {/* <IconButton aria-label="delete">
             <HighlightOffRoundedIcon style={{ fontSize: 16 }} />
-          </IconButton>
+          </IconButton> */}
         </div>
       ))}
     </div>

@@ -3,6 +3,10 @@
 This app allows for users to plan their weekly meals by providing a randomized food item for each day of the week. Users can then choose
 to randomize the entire week or each individual day as they see fit. The app is intended to serve as a way of providing ideas and inspiration for meals rather than leaving it up to the user to come up with what they want on their own. It removes the hassle of spending time planning what you want to eat at the beginning of each week. Meal planning has never been quicker!
 
+## Gif
+
+<img src="https://github.com/Trevor2492/Chat-app/blob/master/5.5%20Final%20Chat%20App%20recording.gif" width="300" />
+
 # Available Scripts
 
 In the project directory, you can run:

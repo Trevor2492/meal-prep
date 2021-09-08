@@ -18,7 +18,7 @@ const NewInput = () => {
             name: item,
           })
           .then(() => {
-            alert(item + " has been added to the list");
+            return;
           })
           .catch((error) => {
             console.error("Error writing document: ", error);

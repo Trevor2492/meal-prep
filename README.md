@@ -5,7 +5,7 @@ to randomize the entire week or each individual day as they see fit. The app is 
 
 ## Gif
 
-<img src="https://github.com/Trevor2492/Chat-app/blob/master/5.5%20Final%20Chat%20App%20recording.gif" width="300" />
+<img src="https://github.com/Trevor2492/meal-prep/blob/main/Meal-Planner.gif" width="300" />
 
 # Available Scripts
 
